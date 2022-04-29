@@ -1,0 +1,62 @@
+{
+  "studentsList": [
+    {
+      "fName": "Mohamed",
+      "lName": "TAKOUTI",
+      "email": "takouti.mohamed@gmail.com",
+      "bDay": "1986-08-29T22:00:00.000Z",
+      "address": "05 rue Guatemala morouj 4",
+      "tel": "55555850",
+      "city": "Ben Arous",
+      "codepostal": "2074",
+      "gender": "Male",
+      "id": 1
+    },
+    {
+      "fName": "Khaoula",
+      "lName": "Yazidi",
+      "email": "yazidikhaoula@gmail.com",
+      "bDay": "1990-05-19T22:00:00.000Z",
+      "address": "05 rue Guatemala morouj 4",
+      "tel": "55545589",
+      "city": "Ben Arous",
+      "codepostal": "2074",
+      "gender": "Female",
+      "id": 2
+    },
+    {
+      "fName": "Hedia",
+      "lName": "Doukali",
+      "email": "hediadoukali@gmail.com",
+      "bDay": "1966-03-06T23:00:00.000Z",
+      "address": "rue tayeb el mhiri",
+      "tel": "43186599",
+      "city": "Touzer",
+      "codepostal": "2090",
+      "gender": "Female",
+      "id": 3
+    },
+    {
+      "fName": "Roy",
+      "lName": "Rottweiler",
+      "email": "royrottweilerroy@gmail.com",
+      "bDay": "2021-02-13T23:00:00.000Z",
+      "address": "ezzahara",
+      "tel": "1111111111111",
+      "city": "Ben Arous",
+      "codepostal": "2074",
+      "gender": "Animal",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,97 @@
+<h1 mat-dialog-title>Add Student </h1>
+<div mat-dialog-content>
+  <form class="example-form" [formGroup]="studentForm">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>institute (disabled)</mat-label>
+      <input  matInput disabled value="Suptech">
+    </mat-form-field>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First name</mat-label>
+            <input matInput formControlName="fName">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last name</mat-label>
+            <input matInput formControlName="lName">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+        placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Birthday </mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="bDay">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Address </mat-label>
+        <textarea matInput formControlName="address"></textarea>
+      </mat-form-field>
+    </p>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Mobile</mat-label>
+      <span matPrefix>+216 &nbsp;</span>
+      <input type="tel" matInput placeholder="tel number" formControlName="tel">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-select placeholder="City" formControlName="city">
+              <mat-option value="Tunis">Tunis</mat-option>
+              <mat-option value="Ben Arous">Ben Arous</mat-option>
+              <mat-option value="Ariana">Ariana</mat-option>
+              <mat-option value="Mannouba">Mannouba</mat-option>
+              <mat-option value="Touzer">Touzer</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Postal Code</mat-label>
+            <input matInput #postalCode maxlength="4" placeholder="Ex. 2016" formControlName="codepostal">
+            <mat-hint align="end">{{postalCode.value.length}} / 4</mat-hint>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <label id="example-radio-group-label">Gender : </label>
+    <mat-radio-group aria-labelledby="example-radio-group-label" formControlName="gender" class="example-radio-group"
+      [(ngModel)]="gender">
+      <mat-radio-button class="example-radio-button" *ngFor="let gender of genders" [value]="gender">
+        {{gender}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addStudent()">{{actionBtn}}</button>
+
+
+  </form>
+
+</div>
